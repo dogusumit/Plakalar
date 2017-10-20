@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dogusumit.plakalar.MainActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/navigation"
+        android:layout_alignParentBottom="true"/>
+
+    <RelativeLayout
+        android:id="@+id/plakalistelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/navigation"
+        android:layout_alignParentTop="true"
+        android:visibility="visible">
+        <EditText
+            android:id="@+id/editText1"
+            android:hint="@string/ara"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:drawableLeft="@android:drawable/ic_menu_search"
+            android:layout_alignParentTop="true"
+            android:inputType="text"
+            android:maxLines="1"
+            android:nextFocusUp="@id/editText1"
+            android:nextFocusLeft="@id/editText1"
+            android:imeOptions="actionDone"/>
+
+        <ListView
+            android:id="@+id/listview1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_below="@id/editText1"/>
+
+    </RelativeLayout>
+
+
+
+    <ScrollView
+        android:id="@+id/oyunlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/navigation"
+        android:layout_alignParentTop="true"
+        android:fillViewport="true"
+        android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:nextFocusUp="@id/editText1"
+                android:nextFocusLeft="@id/editText1"
+                android:layout_margin="10dp"
+                android:textSize="50sp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"/>
+
+
+
+            <LinearLayout
+                android:id="@+id/layout1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_below="@id/textView1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+                    <Button
+                        android:id="@+id/btnA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"/>
+                    <Button
+                        android:id="@+id/btnB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+                    <Button
+                        android:id="@+id/btnC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"/>
+                    <Button
+                        android:id="@+id/btnD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/layout1"
+                android:layout_margin="20dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    />
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    />
+            </LinearLayout>
+
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/banner_ad_unit_id"
+                android:layout_below="@id/layout2"/>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
